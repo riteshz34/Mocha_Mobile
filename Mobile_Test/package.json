@@ -1,0 +1,42 @@
+{
+  "name": "cocacola",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=dev",
+    "test": "npm run start && npx wdio wdio.remote.conf.js",
+    "wdio": "npm run start && npx wdio ./wdio.conf.js",
+    "local": "npm run start && npx wdio ./wido.local.conf.js",
+    "report": "npx allure generate allure-results --clean && npx allure open",
+    "allure": "allure generate allure-results && allure open",
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
+  },
+  "author": "@muthupondi",
+  "license": "ISC",
+  "devDependencies": {
+    "@gmangiapelo/wdio-azure-devops-service": "^0.0.11",
+    "@wdio/allure-reporter": "8.24.12",
+    "@wdio/appium-service": "^8.27.0",
+    "@wdio/cli": "^8.24.6",
+    "@wdio/local-runner": "^8.27.0",
+    "@wdio/mocha-framework": "^8.27.0",
+    "@wdio/spec-reporter": "^8.27.0",
+    "appium": "^2.2.3",
+    "appium-uiautomator2-driver": "^2.35.0",
+    "chai": "^4.3.7",
+    "chai-as-promised": "7.1.1",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "wdio-dot-reporter": "^0.0.10",
+    "wdio-lambdatest-service": "^2.1.2",
+    "wdio-mochawesome-reporter": "^2.0.1",
+    "webdriverio": "^8.24.6"
+  },
+  "dependencies": {
+    "@wdio/local-runner": "^7.16.16",
+    "allure-commandline": "^2.25.0",
+    "yargs": "^17.7.2"
+  }
+}
